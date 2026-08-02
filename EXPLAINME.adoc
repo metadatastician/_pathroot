@@ -56,19 +56,7 @@ Caveat:
 
 * Runtime files are intentionally lightweight and require human/agent completion.
 
-== Template Token Policy
 
-Claim:
-Placeholders are explicit template content until initialization.
-
-How this is implemented:
-
-* `README.adoc` and bootstrap recipes keep `{{TOKEN}}` placeholders visible.
-* `just init` performs token replacement.
-
-Caveat:
-
-* Uninitialized placeholders must not be treated as project-specific truth.
 
 == Dependency Updates (Dependabot)
 
@@ -113,6 +101,6 @@ Caveat:
 
 == License
 
-This project is licensed under the Mozilla Public License, v. 2.0. See the `LICENSE` file for details.
+This project is licensed under the Mozilla Public License, v. 2.0. See the `LICENSE.txt` file for details.
 
 SPDX-License-Identifier: CC-BY-SA-4.0

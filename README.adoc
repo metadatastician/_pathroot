@@ -18,29 +18,13 @@ image:https://sonarcloud.io/api/project_badges/measure?project=metadatastician__
 image:https://archive.softwareheritage.org/badge/origin/https://github.com/metadatastician/_pathroot/[Archived in Software Heritage,link="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/metadatastician/_pathroot"]
 
 // ── Provenance & ecosystem ──────────────────────────────────────────────────
-image:https://img.shields.io/badge/Idris-Inside-5E5086?logo=idris&logoColor=white[Idris Inside,link="https://github.com/hyperpolymath/proven"]
-image:https://img.shields.io/badge/Zig-Zero--overhead-F7A41D?logo=zig&logoColor=black[Zig Zero-overhead FFI,link="https://github.com/hyperpolymath/typed-wasm"]
 image:https://api.thegreenwebfoundation.org/greencheckimage/github.com[Green Web,link="https://www.thegreenwebfoundation.org/green-web-check/?url=github.com"]
 
 A global marker file protocol for modular devtools environments.
 
-[IMPORTANT]
-====
-*This file is a template.* You are reading `README.adoc` from the *RSR template repo*
-(or a freshly-cloned copy of it). Run `just init` to replace every `{{PLACEHOLDER}}`
-token with your project's details, then delete this admonition. Until you do, the
-`{{...}}` markers below are intentional placeholders, not content.
-====
-
 == What this is
 
-A new repository scaffolded from the *Rhodium Standard Repository (RSR)* template:
-a batteries-included starting point that ships with CI/CD, machine-readable project
-metadata, an AI-agent gatekeeper protocol, a formally-typed ABI/FFI seam
-(Idris2 + Zig), container and reproducible-build scaffolding, and governance
-infrastructure — all wired and passing the RSR validators on day one.
-
-Replace this section with a description of *your* project once initialised.
+`_pathroot` is a global marker file protocol for modular devtools environments.
 
 == Quick start
 
@@ -84,7 +68,6 @@ across the tree, validates the result, and (if available) runs the `k9-svc` chec
 
 | `0-AI-MANIFEST.a2ml`      | Universal entry point for AI agents (read first).
 | `.machine_readable/`      | Project metadata, policies, contractiles, AI configs.
-| `src/interface/`          | Typed ABI (Idris2) + FFI (Zig) + generated headers.
 | `docs/`                   | Onboarding, status, governance, practice, decisions.
 | `build/`, `Justfile`      | Task orchestration (`just` phases delegate to `build/just/*.just`).
 | `.github/`                | Workflows + community health files.
@@ -100,9 +83,9 @@ across the tree, validates the result, and (if available) runs the `k9-svc` chec
 
 == Licence
 
-Code, configuration and scripts are link:LICENSE[Mozilla Public License 2.0]
+Code, configuration and scripts are link:LICENSE.txt[Mozilla Public License 2.0]
 (`MPL-2.0`); prose documentation is `CC-BY-SA-4.0`. Both texts live in
 `LICENSES/`, and per-file `SPDX-License-Identifier` headers are authoritative.
-The GitHub-detected licence is MPL-2.0 (the root `LICENSE`). Long-term
+The GitHub-detected licence is MPL-2.0 (the root `LICENSE.txt`). Long-term
 attribution uses Quantum-Safe Provenance — see
 link:docs/legal/EXHIBIT-B-QUANTUM-SAFE.txt[the Quantum-Safe Provenance exhibit].
