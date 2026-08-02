@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MPL-2.0
 #
-# Cerro Torre manifest for {{PROJECT_NAME}} .ctp bundle
+# Cerro Torre manifest for _pathroot .ctp bundle
 #
 # This manifest describes the container image for verified
 # container packaging. Used by `ct pack` to create .ctp bundles.
@@ -9,18 +9,18 @@
 name = "{{SERVICE_NAME}}"
 version = "{{VERSION}}"
 revision = 1
-summary = "{{PROJECT_DESCRIPTION}}"
+summary = "A global marker file protocol for modular devtools environments."
 description = """
-{{PROJECT_NAME}} — containerised service packaged as a verified
+_pathroot — containerised service packaged as a verified
 cerro-torre .ctp bundle with Ed25519 signing and full provenance
 tracking.
 """
 license = "{{LICENSE}}"
-homepage = "https://{{FORGE}}/{{OWNER}}/{{REPO}}"
+homepage = "https://github.com/metadatastician/_pathroot"
 maintainer = "{{AUTHOR}} <{{EMAIL}}>"
 
 [provenance]
-upstream = "https://{{FORGE}}/{{OWNER}}/{{REPO}}"
+upstream = "https://github.com/metadatastician/_pathroot"
 import_date = {{CURRENT_DATE}}T00:00:00Z
 
 [dependencies]

@@ -10,5 +10,5 @@
 Contact: mailto:{{SECURITY_EMAIL}}
 Expires: {{CURRENT_YEAR}}-12-31T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://{{FORGE}}/{{OWNER}}/{{REPO}}/.well-known/security.txt
-Policy: https://{{FORGE}}/{{OWNER}}/{{REPO}}/blob/main/SECURITY.md
+Canonical: https://github.com/metadatastician/_pathroot/.well-known/security.txt
+Policy: https://github.com/metadatastician/_pathroot/blob/main/SECURITY.md

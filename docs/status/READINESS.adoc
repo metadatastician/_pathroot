@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-= {{PROJECT_NAME}} Component Readiness Assessment
+= _pathroot Component Readiness Assessment
 
-*Standard:* link:https://{{FORGE}}/{{OWNER}}/standards/tree/main/component-readiness-grades[Component Readiness Grades (CRG) v2.0 STRICT] +
+*Standard:* link:https://github.com/metadatastician/standards/tree/main/component-readiness-grades[Component Readiness Grades (CRG) v2.0 STRICT] +
 *Assessed:* {{CURRENT_DATE}} +
 *Assessor:* {{AUTHOR}} +
 *Previous assessment:* _<date or "none">_

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# {{PROJECT_NAME}} Container Image
+# _pathroot Container Image
 #
 # Multi-stage build template for Chainguard Wolfi base images.
 # Customise the builder stage for your language and copy the
@@ -82,11 +82,11 @@ COPY . .
 FROM cgr.dev/chainguard/wolfi-base:latest
 
 # OCI image labels (compatible with cerro-torre .ctp bundle metadata)
-LABEL org.opencontainers.image.title="{{PROJECT_NAME}}" \
-      org.opencontainers.image.description="{{PROJECT_DESCRIPTION}}" \
-      org.opencontainers.image.url="https://{{FORGE}}/{{OWNER}}/{{REPO}}" \
-      org.opencontainers.image.source="https://{{FORGE}}/{{OWNER}}/{{REPO}}" \
-      org.opencontainers.image.vendor="{{OWNER}}" \
+LABEL org.opencontainers.image.title="_pathroot" \
+      org.opencontainers.image.description="A global marker file protocol for modular devtools environments." \
+      org.opencontainers.image.url="https://github.com/metadatastician/_pathroot" \
+      org.opencontainers.image.source="https://github.com/metadatastician/_pathroot" \
+      org.opencontainers.image.vendor="metadatastician" \
       org.opencontainers.image.licenses="{{LICENSE}}" \
       org.opencontainers.image.authors="{{AUTHOR}} <{{AUTHOR_EMAIL}}>" \
       dev.cerrotorre.manifest="container/stapeln/manifest.toml" \

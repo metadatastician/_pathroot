@@ -9,7 +9,7 @@ last-updated = "{{CURRENT_DATE}}"
 
 [project]
 name = "[YOUR-REPO-NAME]"
-purpose = "{{PROJECT_DESCRIPTION}}"
+purpose = "A global marker file protocol for modular devtools environments."
 
 [ai-allocation]
 agents = [

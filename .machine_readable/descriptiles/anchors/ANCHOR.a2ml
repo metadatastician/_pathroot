@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} ({{OWNER}}) <{{AUTHOR_EMAIL}}>
+# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
 #
 # ANCHOR.a2ml - authoritative anchor for this repository
 
@@ -9,7 +9,7 @@ last-updated = "{{CURRENT_DATE}}"
 
 [anchor]
 schema = "hyperpolymath.anchor/1"
-repo = "{{OWNER}}/{{REPO}}"
+repo = "metadatastician/_pathroot"
 authority = "upstream-canonical"
 
 purpose = [
@@ -19,7 +19,7 @@ purpose = [
 ]
 
 [identity]
-project = "{{PROJECT_NAME}}"
+project = "_pathroot"
 kind = "{{PROJECT_KIND}}"                # language | library | service | tool
 one-sentence = "{{PROJECT_PURPOSE}}"
 domain = "{{PROJECT_DOMAIN}}"

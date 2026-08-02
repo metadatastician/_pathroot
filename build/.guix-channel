@@ -1,20 +1,20 @@
 ;; SPDX-License-Identifier: MPL-2.0
-;; Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} ({{OWNER}}) <{{AUTHOR_EMAIL}}>
+;; Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
 ;;
-;; Guix channel definition for {{PROJECT_NAME}}
+;; Guix channel definition for _pathroot
 ;;
 ;; To use this channel, add to ~/.config/guix/channels.scm:
 ;;
 ;;   (channel
-;;     (name '{{PROJECT_NAME}})
-;;     (url "https://github.com/{{OWNER}}/{{PROJECT_NAME}}")
+;;     (name '_pathroot)
+;;     (url "https://github.com/metadatastician/_pathroot")
 ;;     (branch "main"))
 ;;
 ;; Then: guix pull
 
 (channel
   (version 0)
-  (url "https://github.com/{{OWNER}}/{{PROJECT_NAME}}")
+  (url "https://github.com/metadatastician/_pathroot")
   (dependencies
    (channel
      (name 'guix)

@@ -15,7 +15,7 @@
 # fact anyone can recompute and check — never copy one from another repo, and
 # never make one up. Recompute this one any time with:
 #
-#     uuidgen --sha1 --namespace @url --name "github.com/{{OWNER}}/{{REPO}}"
+#     uuidgen --sha1 --namespace @url --name "github.com/metadatastician/_pathroot"
 #
 # Verify the method first by reproducing a known worked example:
 #     janus example -> e216170e-ff47-5a5c-bbdd-15e61c8190c8
@@ -25,9 +25,9 @@
 # owner that is TRUE TODAY, and re-derive if it ever moves.
 uuid = "{{UUID}}"
 primary-forge = "github"
-primary-owner = "{{OWNER}}"
-canonical-name = "{{REPO}}"
-prefixed-name = "UNASSIGNED-{{REPO}}"   # becomes <primary>-{{REPO}} once the clade is chosen
+primary-owner = "metadatastician"
+canonical-name = "_pathroot"
+prefixed-name = "UNASSIGNED-_pathroot"   # becomes <primary>-_pathroot once the clade is chosen
 
 [clade]
 # ---------------------------------------------------------------------------
@@ -83,7 +83,7 @@ assigned = "{{CURRENT_DATE}}"
 rationale = ""                # why THIS category — in value-proposition terms
 
 [forges]
-github = "{{OWNER}}/{{REPO}}"
+github = "metadatastician/_pathroot"
 gitlab = ""       # populated if/when mirrored
 bitbucket = ""    # populated if/when mirrored
 

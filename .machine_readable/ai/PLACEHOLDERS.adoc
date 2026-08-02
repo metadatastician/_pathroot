@@ -22,12 +22,12 @@ validates the result, and runs k9-svc checks if available.
 
 sed -i 's/{{AUTHOR}}/Jane Doe/g' $(grep -rl '{{AUTHOR}}' .)
 sed -i 's/{{AUTHOR_EMAIL}}/jane@example.org/g' $(grep -rl '{{AUTHOR_EMAIL}}' .)
-sed -i 's/{{OWNER}}/my-org/g' $(grep -rl '{{OWNER}}' .)
-sed -i 's/{{PROJECT_NAME}}/my-project/g' $(grep -rl '{{PROJECT_NAME}}' .)
+sed -i 's/metadatastician/my-org/g' $(grep -rl 'metadatastician' .)
+sed -i 's/_pathroot/my-project/g' $(grep -rl '_pathroot' .)
 sed -i 's/{{PROJECT}}/MY_PROJECT/g' $(grep -rl '{{PROJECT}}' .)
 sed -i 's/{{project}}/my_project/g' $(grep -rl '{{project}}' .)
-sed -i 's/{{REPO}}/my-project/g' $(grep -rl '{{REPO}}' .)
-sed -i 's/{{FORGE}}/github.com/g' $(grep -rl '{{FORGE}}' .)
+sed -i 's/_pathroot/my-project/g' $(grep -rl '_pathroot' .)
+sed -i 's/github.com/github.com/g' $(grep -rl 'github.com' .)
 sed -i "s/{{CURRENT_YEAR}}/$(date +%Y)/g" $(grep -rl '{{CURRENT_YEAR}}' .)
 sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
 ```
@@ -50,13 +50,13 @@ sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
 
 | Placeholder | Description | Example | Files |
 |---|---|---|---|
-| `{{PROJECT_NAME}}` | Human-readable project name | `My Project` | SECURITY.md, CODE_OF_CONDUCT.md, TOPOLOGY.md, STATE.a2ml, Justfile, GOVERNANCE.md, MAINTAINERS.md, devcontainer.json |
-| `{{PROJECT_DESCRIPTION}}` | One-line description | `A tool for X` | README.adoc, container/Containerfile |
+| `_pathroot` | Human-readable project name | `My Project` | SECURITY.md, CODE_OF_CONDUCT.md, TOPOLOGY.md, STATE.a2ml, Justfile, GOVERNANCE.md, MAINTAINERS.md, devcontainer.json |
+| `A global marker file protocol for modular devtools environments.` | One-line description | `A tool for X` | README.adoc, container/Containerfile |
 | `{{PROJECT}}` | Uppercase identifier (for Idris2 modules, C macros) | `MY_PROJECT` | ABI-FFI-README.md, src/interface/abi/*.idr, src/interface/ffi/*.zig |
 | `{{project}}` | Lowercase identifier (for C symbols, filenames) | `my_project` | ABI-FFI-README.md, src/interface/ffi/*.zig |
-| `{{REPO}}` | Repository name (slug) | `my-project` | CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md, cliff.toml |
-| `{{OWNER}}` | GitHub/GitLab org or username | `my-org` | SPDX headers, CONTRIBUTING.md, SECURITY.md, GOVERNANCE.md, MAINTAINERS.md, CODEOWNERS, mirror.yml, cliff.toml |
-| `{{FORGE}}` | Git forge domain | `github.com` | CONTRIBUTING.md |
+| `_pathroot` | Repository name (slug) | `my-project` | CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md, cliff.toml |
+| `metadatastician` | GitHub/GitLab org or username | `my-org` | SPDX headers, CONTRIBUTING.md, SECURITY.md, GOVERNANCE.md, MAINTAINERS.md, CODEOWNERS, mirror.yml, cliff.toml |
+| `github.com` | Git forge domain | `github.com` | CONTRIBUTING.md |
 
 ### Dates
 

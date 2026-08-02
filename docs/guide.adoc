@@ -1,0 +1,168 @@
+= _pathroot for morons
+An Open Guide to Modular Devtools Environments
+
+== Introduction
+Welcome, Head of DevOps. This guide is your walkthrough of a modular devtools scaffold built for clarity, introspection, and automation. It’s designed to be teachable, tweakable, and explainable—so you can understand not just what it does, but why it does it.
+
+As you read, consider:
+* What assumptions are being made?
+* How might this scale or evolve?
+* What would you do differently?
+
+== The Problem We’re Solving
+Modern dev environments are messy. Scripts break when paths change. Tools get lost in the filesystem. Configs are duplicated or hardcoded.
+
+We want a system that:
+* Can be discovered from anywhere
+* Knows what kind of environment it’s in
+* Is easy to scaffold, inspect, and automate
+
+== The Solution: Two Markers, Two Roles
+
+=== 1. `C:\_pathroot`
+Global marker that tells any tool: “Here’s the root of the devtools universe.”
+* Placed at the drive level
+* Used for system-wide discovery
+* Contains: `C:\devtools`
+
+=== 2. `C:\devtools\_envbase`
+Local metadata that describes the environment.
+* Used for introspection
+* Contains JSON like:
+[source,json]
+----
+{
+  "env": "devtools",
+  "profile": "default",
+  "platform": "windows"
+}
+----
+
+== Directory Structure
+
+----
+C:\devtools\
+├── bin\        # Executables
+├── scripts\    # Utility scripts
+├── config\     # Config files
+├── logs\       # Log outputs
+├── temp\       # Temporary files
+├── tools\      # Installed packages
+├── _envbase    # Local environment metadata
+C:\_pathroot    # Global root marker
+----
+
+== Automation Script: automkdir.bat
+This script scaffolds the entire structure and writes both markers. It’s dry-run safe and repeatable.
+
+== Introspection Script: envbase.ps1
+Reads `_pathroot`, locates `_envbase`, and prints environment metadata. Useful for tooling, debugging, or profile switching.
+
+== Why These Choices?
+|===
+|Feature |Reason
+
+|Global marker
+|Enables discovery from any location
+
+|Local metadata
+|Keeps environment logic self-contained
+
+|Declarative
+|Easy to inspect, version, and automate
+
+|Modular layout
+|Separates concerns (scripts, logs, config)
+|===
+
+== Open Questions for You
+* Would you prefer a registry-based marker over a file-based one?
+* Should `_envbase` support multiple profiles or overlays?
+* How would you handle cross-platform discovery (e.g., WSL, macOS)?
+* Would you want a CLI tool to manage these markers interactively?
+
+== Next Steps
+1. Clone or unzip the scaffold
+2. Run `automkdir.bat`
+3. Inspect with `envbase.ps1`
+4. Customize `_envbase` to reflect your environment
+
+== FAQs for Absolute Imbeciles
+Because everyone starts somewhere, and some of us start further away than others.
+
+=== What is _pathroot and why is it on my C: drive?
+`_pathroot` is a file that tells your system where the devtools live. It’s like a treasure map with only one clue: “Go to C:\devtools.” Any script or tool can read this file and instantly know where to find the good stuff.
+
+=== What is _envbase and why is it inside C:\devtools?
+`_envbase` is the local brain of your devtools environment. It contains metadata. This helps tools know what kind of environment they’re in.
+
+=== Why do we need both _pathroot and _envbase?
+Because one tells you where you are (`_pathroot`), and the other tells you what you are (`_envbase`). Think of `_pathroot` as the GPS coordinates, and `_envbase` as the weather report.
+
+=== What happens if I delete _pathroot?
+Your tools will get lost. Scripts won’t know where to look. Your Head of DevOps will sigh audibly. Just don’t do it. If you did, recreate it with:
+[source,cmd]
+----
+echo C:\devtools > C:\_pathroot
+----
+
+=== What happens if I delete _envbase?
+Your tools will still find the devtools root, but they won’t know what kind of environment they’re in. It’s like waking up in a hotel room with no idea what city you’re in.
+
+=== Can I rename _pathroot to something cooler?
+You can, but you’ll break everything unless you update all your scripts to look for the new name. Stick with `_pathroot`. It’s boring, but it works.
+
+=== Can I have multiple _envbase files?
+Yes, but only if your tooling supports it. You could use: `_envbase.default`, `_envbase.test`, `_envbase.wsl`. Then switch between them with a script. But keep one active at a time unless you like chaos.
+
+=== Can I move C:\devtools somewhere else?
+Yes, but you must update `C:\_pathroot` to point to the new location. Otherwise, your tools will be looking in the wrong place like a dog sniffing the wrong tree.
+
+== Appendices: Scripts & Scaffolds
+
+=== Appendix A: Create _pathroot File (Windows CMD)
+[source,cmd]
+----
+:: Create _pathroot file pointing to devtools root
+echo C:\devtools > C:\_pathroot
+----
+
+=== Appendix B: Read _pathroot in PowerShell
+[source,powershell]
+----
+# Read _pathroot and store in variable
+$Pathroot = Get-Content -Path "C:\_pathroot"
+Write-Host "Devtools root is at: $Pathroot"
+----
+
+=== Appendix C: Create _envbase File (PowerShell)
+[source,powershell]
+----
+# Create _envbase file with basic metadata
+$envbase = @{
+    env      = "devtools"
+    profile  = "default"
+    platform = "windows"
+}
+$envbase | ConvertTo-Json -Depth 3 | Set-Content -Path "C:\devtools\_envbase"
+----
+
+=== Appendix D: Read _envbase and Parse JSON (PowerShell)
+[source,powershell]
+----
+# Read and parse _envbase metadata
+$envbase = Get-Content -Path "C:\devtools\_envbase" | ConvertFrom-Json
+Write-Host "Environment: $($envbase.env)"
+Write-Host "Profile: $($envbase.profile)"
+Write-Host "Platform: $($envbase.platform)"
+----
+
+=== Appendix G: Safe Link Creation with Audit Log (PowerShell)
+[source,powershell]
+----
+# Create symbolic link and log action
+$src = "C:\devtools\bin\tool.exe"
+$dst = "C:\tools\tool.exe"
+New-Item -ItemType SymbolicLink -Path $dst -Target $src
+Add-Content -Path "C:\devtools\logs\link-audit.txt" -Value "$dst -> $src"
+----

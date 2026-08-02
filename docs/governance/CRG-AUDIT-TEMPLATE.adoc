@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-= {{PROJECT_NAME}} — CRG Audit ({{CURRENT_DATE}})
+= _pathroot — CRG Audit ({{CURRENT_DATE}})
 {{AUTHOR}}
 {{CURRENT_DATE}}
 :toc:
@@ -18,7 +18,7 @@
 
 == Scope and Standard
 
-Evaluates the `{{REPO}}` repository against
+Evaluates the `_pathroot` repository against
 *Component Readiness Grades v2.0 (STRICT)*, 2026-03-30 revision.
 
 - Standard: `standards/component-readiness-grades/COMPONENT-READINESS-GRADES.md`
@@ -101,7 +101,7 @@ Do *not* mark PRESENT without citing the path.
 | Build-system policy (RSR R-020)
 
 | Remote
-| `git@{{FORGE}}:{{OWNER}}/{{REPO}}.git` (origin only) / drift
+| `git@github.com:metadatastician/_pathroot.git` (origin only) / drift
 | `git remote -v`
 |===
 
