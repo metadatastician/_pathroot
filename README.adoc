@@ -12,7 +12,7 @@ image:https://img.shields.io/badge/Provenance-Quantum--Safe-blueviolet[Quantum-S
 
 // ── Standard & quality gates ────────────────────────────────────────────────
 image:https://img.shields.io/badge/RSR-Rhodium_Standard-9C27B0[Rhodium Standard Repository,link="https://github.com/hyperpolymath/rhodium-standard-repositories"]
-image:https://www.bestpractices.dev/projects/{{OPENSSF_BP_ID}}/badge[OpenSSF Best Practices,link="https://www.bestpractices.dev/projects/{{OPENSSF_BP_ID}}"]
+image:https://www.bestpractices.dev/projects/N/A/badge[OpenSSF Best Practices,link="https://www.bestpractices.dev/projects/N/A"]
 image:https://api.scorecard.dev/projects/github.com/metadatastician/_pathroot/badge[OpenSSF Scorecard,link="https://scorecard.dev/viewer/?uri=github.com/metadatastician/_pathroot"]
 image:https://sonarcloud.io/api/project_badges/measure?project=metadatastician__pathroot&metric=alert_status[SonarQube Quality Gate,link="https://sonarcloud.io/summary/new_code?id=metadatastician__pathroot"]
 image:https://archive.softwareheritage.org/badge/origin/https://github.com/metadatastician/_pathroot/[Archived in Software Heritage,link="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/metadatastician/_pathroot"]

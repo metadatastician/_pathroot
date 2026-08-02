@@ -7,10 +7,10 @@
 
 [source,bibtex]
 ----
-@software{_pathroot_{{CURRENT_YEAR}},
-  author = {{{AUTHOR_LAST}}, {{AUTHOR_FIRST}}},
+@software{_pathroot_2026,
+  author = {polymath, hyper},
   title = {_pathroot},
-  year = {{{CURRENT_YEAR}}},
+  year = {2026},
   url = {https://github.com/metadatastician/_pathroot},
   license = {MPL-2.0}
 }
@@ -18,19 +18,19 @@
 
 == Harvard Style
 
-{{AUTHOR_LAST}}, {{AUTHOR_INITIALS}} ({{CURRENT_YEAR}}) __pathroot_ [Computer software]. Available at: https://github.com/metadatastician/_pathroot
+polymath, h (2026) __pathroot_ [Computer software]. Available at: https://github.com/metadatastician/_pathroot
 
 == OSCOLA
 
-{{AUTHOR}}, '_pathroot' ({{CURRENT_YEAR}}) <https://github.com/metadatastician/_pathroot>
+hyperpolymath, '_pathroot' (2026) <https://github.com/metadatastician/_pathroot>
 
 == MLA
 
-{{AUTHOR_LAST}}, {{AUTHOR_FIRST}} "_pathroot." {{CURRENT_YEAR}}, github.com/metadatastician/_pathroot.
+polymath, hyper "_pathroot." 2026, github.com/metadatastician/_pathroot.
 
 == APA 7
 
-{{AUTHOR_LAST}}, {{AUTHOR_INITIALS}} ({{CURRENT_YEAR}}). __pathroot_ [Computer software]. GitHub. https://github.com/metadatastician/_pathroot
+polymath, h (2026). __pathroot_ [Computer software]. GitHub. https://github.com/metadatastician/_pathroot
 
 == See Also
 

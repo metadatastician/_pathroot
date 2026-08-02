@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-// SPDX-FileCopyrightText: {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+// SPDX-FileCopyrightText: 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 = Troubleshooting — _pathroot
-:revdate: {{CURRENT_YEAR}}-MM-DD
+:revdate: 2026-MM-DD
 
 This file is a *living FAQ* — known failure modes and recovery paths.
 Add a new entry every time you debug something that took more than 15

@@ -1,6 +1,6 @@
 K9!
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+# Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 #
 # K9 Validator: Methodology Guard
 # Checks that agent work respects methodology constraints declared in

@@ -48,7 +48,7 @@ help recipe="":
 
 # Show this project's info
 info:
-    @echo "Project: {{project}}"
+    @echo "Project: _pathroot"
     @echo "Version: {{version}}"
     @echo "RSR Tier: {{tier}}"
     @echo "Recipes: $(just --summary | wc -w)"
@@ -87,23 +87,23 @@ import? "build/just/assess.just"
 
 # Build the project (debug mode)
 build *args:
-    @echo "Building {{project}} (debug)..."
+    @echo "Building _pathroot (debug)..."
     # TODO: Replace with your build command
     # Examples:
-    #   cargo build {{args}}                    # Rust
-    #   mix compile {{args}}                    # Elixir
-    #   zig build {{args}}                      # Zig
-    #   deno task build {{args}}                # Deno/ReScript
+    #   cargo build                     # Rust
+    #   mix compile                     # Elixir
+    #   zig build                       # Zig
+    #   deno task build                 # Deno/ReScript
     @echo "Build complete"
 
 # Build in release mode with optimizations
 build-release *args:
-    @echo "Building {{project}} (release)..."
+    @echo "Building _pathroot (release)..."
     # TODO: Replace with your release build command
     # Examples:
-    #   cargo build --release {{args}}
-    #   MIX_ENV=prod mix compile {{args}}
-    #   zig build -Doptimize=ReleaseFast {{args}}
+    #   cargo build --release 
+    #   MIX_ENV=prod mix compile 
+    #   zig build -Doptimize=ReleaseFast 
     @echo "Release build complete"
 
 # Build and watch for changes (requires entr or similar)
@@ -142,10 +142,10 @@ test *args:
     # rather than printing "Tests passed!" over an empty run.
     #
     # Replace this whole body with one of:
-    #   cargo test --workspace {{args}}
-    #   mix test {{args}}
-    #   zig build test {{args}}
-    #   deno test {{args}}
+    #   cargo test --workspace 
+    #   mix test 
+    #   zig build test 
+    #   deno test 
     echo "FAIL: \`just test\` has not been wired to a real test command yet." >&2
     echo "      Edit the 'test' recipe in the Justfile before relying on this gate." >&2
     exit 1
@@ -283,7 +283,7 @@ run-verbose *args: build
 
 # Install to user path
 install: build-release
-    @echo "Installing {{project}}..."
+    @echo "Installing _pathroot..."
     # TODO: Replace with your install command
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -354,7 +354,7 @@ cookbook:
     #!/usr/bin/env bash
     mkdir -p docs
     OUTPUT="docs/just-cookbook.adoc"
-    echo "= {{project}} Justfile Cookbook" > "$OUTPUT"
+    echo "= _pathroot Justfile Cookbook" > "$OUTPUT"
     echo ":toc: left" >> "$OUTPUT"
     echo ":toclevels: 3" >> "$OUTPUT"
     echo "" >> "$OUTPUT"
@@ -380,10 +380,10 @@ cookbook:
 man:
     #!/usr/bin/env bash
     mkdir -p docs/man
-    cat > docs/man/{{project}}.1 << EOF
-    .TH {{project}} 1 "$(date +%Y-%m-%d)" "{{version}}" "{{project}} Manual"
+    cat > docs/man/_pathroot.1 << EOF
+    .TH _pathroot 1 "$(date +%Y-%m-%d)" "{{version}}" "_pathroot Manual"
     .SH NAME
-    {{project}} \- RSR-compliant project
+    _pathroot \- RSR-compliant project
     .SH SYNOPSIS
     .B just
     [recipe] [args...]
@@ -392,7 +392,7 @@ man:
     .SH AUTHOR
     $(git config user.name 2>/dev/null || echo "Author") <$(git config user.email 2>/dev/null || echo "email")>
     EOF
-    echo "Generated: docs/man/{{project}}.1"
+    echo "Generated: docs/man/_pathroot.1"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CI & AUTOMATION

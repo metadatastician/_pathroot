@@ -23,7 +23,7 @@
 # The owner segment is part of the derived name, so it is part of the IDENTITY:
 # the same repo hosted under a different owner has a different uuid. Record the
 # owner that is TRUE TODAY, and re-derive if it ever moves.
-uuid = "{{UUID}}"
+uuid = "00000000-0000-0000-0000-000000000000"
 primary-forge = "github"
 primary-owner = "metadatastician"
 canonical-name = "_pathroot"
@@ -79,7 +79,7 @@ prefixed-name = "UNASSIGNED-_pathroot"   # becomes <primary>-_pathroot once the 
 primary = "UNASSIGNED"
 primary-name = "UNASSIGNED"
 secondary = []                # [] unless there is a genuine SECOND core value proposition
-assigned = "{{CURRENT_DATE}}"
+assigned = "2026-08-02"
 rationale = ""                # why THIS category — in value-proposition terms
 
 [forges]
@@ -90,14 +90,14 @@ bitbucket = ""    # populated if/when mirrored
 [lineage]
 type = "standalone"           # standalone | monorepo | monorepo-child | inflated | deflated
 parent = ""                   # a monorepo PARENT — never a description of this repo
-born = "{{CURRENT_DATE}}"
+born = "2026-08-02"
 previous-names = []
 instantiated-from = "rsr-template-repo"
 
 [status]
 # One of: reserved incubating active dormant | merged superseded archived extinct
 phase = "incubating"          # a repo created today has not proven anything yet
-since = "{{CURRENT_DATE}}"
+since = "2026-08-02"
 present = true
 aliases = []
 merged-into = ""
@@ -107,7 +107,7 @@ ended = ""
 
 [[status.history]]
 phase = "incubating"
-since = "{{CURRENT_DATE}}"
+since = "2026-08-02"
 note = "created from rsr-template-repo; clade not yet chosen; not yet registered"
 
 # ---------------------------------------------------------------------------

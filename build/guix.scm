@@ -1,5 +1,5 @@
 ;; SPDX-License-Identifier: MPL-2.0
-;; Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+;; Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 ;;
 ;; Guix package definition for _pathroot
 ;;
@@ -64,7 +64,7 @@
     ;; TODO: Add runtime dependencies
     ))
   (home-page "https://github.com/metadatastician/_pathroot")
-  (synopsis "{{PROJECT_PURPOSE}}")
+  (synopsis "Global marker file protocol")
   (description "RSR-compliant project. See README.adoc for details.")
   (license (list
             ;; MPL-2.0 extends MPL-2.0

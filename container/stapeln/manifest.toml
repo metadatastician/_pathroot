@@ -17,11 +17,11 @@ tracking.
 """
 license = "{{LICENSE}}"
 homepage = "https://github.com/metadatastician/_pathroot"
-maintainer = "{{AUTHOR}} <{{EMAIL}}>"
+maintainer = "hyperpolymath <{{EMAIL}}>"
 
 [provenance]
 upstream = "https://github.com/metadatastician/_pathroot"
-import_date = {{CURRENT_DATE}}T00:00:00Z
+import_date = 2026-08-02T00:00:00Z
 
 [dependencies]
 runtime = ["ca-certificates", "curl"]

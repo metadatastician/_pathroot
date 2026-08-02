@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+# Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 #
 # ANCHOR.a2ml - authoritative anchor for this repository
 
 [metadata]
 version = "1.0.0"
-last-updated = "{{CURRENT_DATE}}"
+last-updated = "2026-08-02"
 
 [anchor]
 schema = "hyperpolymath.anchor/1"
@@ -21,7 +21,7 @@ purpose = [
 [identity]
 project = "_pathroot"
 kind = "{{PROJECT_KIND}}"                # language | library | service | tool
-one-sentence = "{{PROJECT_PURPOSE}}"
+one-sentence = "Global marker file protocol"
 domain = "{{PROJECT_DOMAIN}}"
 
 [semantic-authority]

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+# Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 #
 # methodology.a2ml — AI agent methodology configuration
 # Declares how agents should approach work in this repository.
@@ -9,7 +9,7 @@
 
 [metadata]
 version = "1.0.0"
-last-updated = "{{CURRENT_DATE}}"
+last-updated = "2026-08-02"
 spec = "https://github.com/hyperpolymath/standards/blob/main/agentic-a2ml/docs/ADR-002-methodology-layer.adoc"
 
 # ============================================================================
@@ -102,7 +102,7 @@ constraints = [
 
 [methodology.state-validation]
 # A regex, not a literal list. The list form named the exact strings it was
-# meant to catch ("{{PROJECT}}"), so `just init` substituted the detector along
+# meant to catch ("_pathroot"), so `just init` substituted the detector along
 # with everything else and shipped reject-if-contains = ["MY_PROJECT", ...] —
 # a guard against unfilled tokens that had been eaten by the filling. The
 # escaped pattern below contains no token for init to match, and covers every

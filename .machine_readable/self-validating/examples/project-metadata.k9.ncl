@@ -19,7 +19,7 @@ K9!
       name = "project-metadata",
       version = "1.0.0",
       description = "Pure data configuration for project metadata",
-      author = "{{AUTHOR}} <{{AUTHOR_EMAIL}}>",
+      author = "hyperpolymath <hyperpolymath@example.com>",
     },
   },
 
@@ -35,8 +35,8 @@ K9!
     },
 
     author = {
-      name = "{{AUTHOR}}",
-      email = "{{AUTHOR_EMAIL}}",
+      name = "hyperpolymath",
+      email = "hyperpolymath@example.com",
       organization = "{{AUTHOR_ORG}}",
     },
 

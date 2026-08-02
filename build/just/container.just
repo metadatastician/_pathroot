@@ -59,8 +59,8 @@ container-init:
     fi
 
     # Prompt for container-specific values
-    read -rp "Service name (e.g. my-api) [{{project}}]: " _SERVICE_NAME
-    SERVICE_NAME="${_SERVICE_NAME:-{{project}}}"
+    read -rp "Service name (e.g. my-api) [_pathroot]: " _SERVICE_NAME
+    SERVICE_NAME="${_SERVICE_NAME:-_pathroot}"
 
     read -rp "Primary port [8080]: " _PORT
     PORT="${_PORT:-8080}"
@@ -109,13 +109,13 @@ container-init:
 container-build *args:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{_engine}}
+    docker
     if [ -f "container/stapeln/ct-build.sh" ]; then
-        cd container/stapeln && CONTAINER_ENGINE="$ENGINE" ./ct-build.sh {{args}}
+        cd container/stapeln && CONTAINER_ENGINE="$ENGINE" ./ct-build.sh 
     elif [ -f "container/Containerfile" ]; then
-        "$ENGINE" build -t {{project}}:latest -f container/Containerfile .
+        "$ENGINE" build -t _pathroot:latest -f container/Containerfile .
     elif [ -f "Containerfile" ]; then
-        "$ENGINE" build -t {{project}}:latest -f Containerfile .
+        "$ENGINE" build -t _pathroot:latest -f Containerfile .
     else
         echo "No Containerfile found in container/ or project root"
         exit 1
@@ -125,11 +125,11 @@ container-build *args:
 _compose action *args:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{_engine}}
+    docker
     if command -v selur-compose >/dev/null 2>&1 && [ -f "container/stapeln/compose.toml" ]; then
-        ( cd container/stapeln && selur-compose {{action}} {{args}} )
+        ( cd container/stapeln && selur-compose build  )
     elif [ -f "container/compose.yaml" ]; then
-        "$ENGINE" compose -f container/compose.yaml {{action}} {{args}}
+        "$ENGINE" compose -f container/compose.yaml build 
     else
         echo "No compose file found (container/stapeln/compose.toml or container/compose.yaml)"
         exit 1
@@ -139,7 +139,7 @@ _compose action *args:
 container-verify:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{_engine}}
+    docker
     if command -v selur-compose >/dev/null 2>&1 && [ -f "container/stapeln/compose.toml" ]; then
         ( cd container/stapeln && selur-compose verify )
     elif [ -f "container/compose.yaml" ]; then
@@ -151,11 +151,11 @@ container-verify:
 
 # Start the container stack (selur-compose if available, else $ENGINE compose)
 container-up *args:
-    @just _compose up {{args}}
+    @just _compose up 
 
 # Stop the container stack
 container-down *args:
-    @just _compose down {{args}}
+    @just _compose down 
 
 # Sign and verify the container bundle (cerro-torre: build + pack + sign + verify)
 container-sign:
@@ -172,24 +172,24 @@ container-sign:
 container-push:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{_engine}}
+    docker
     if [ -f "container/stapeln/ct-build.sh" ]; then
         cd container/stapeln && CONTAINER_ENGINE="$ENGINE" ./ct-build.sh --push
     else
         echo "No container/stapeln/ct-build.sh found — falling back to $ENGINE push"
-        "$ENGINE" push {{project}}:latest
+        "$ENGINE" push _pathroot:latest
     fi
 
 # Run the container interactively (for debugging)
 container-run *args:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{_engine}}
-    "$ENGINE" run --rm -it {{project}}:latest {{args}}
+    docker
+    "$ENGINE" run --rm -it _pathroot:latest 
 
 # Container matrix: [build|run|push|shell|scan] x [registry] x [tag]
 container-matrix action="build" registry="ghcr.io/metadatastician" tag="latest":
-    @echo "Container matrix: action={{action}} registry={{registry}} tag={{tag}}"
+    @echo "Container matrix: action=build registry=docker.io tag=latest"
 
 # ── Narrowing / opt-out ──────────────────────────────────────────────────────
 #

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+# Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 #
 # git-cliff configuration for conventional commit changelog generation.
 # https://git-cliff.org/docs/configuration

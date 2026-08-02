@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright (c) {{CURRENT_YEAR}} {{AUTHOR}} (metadatastician) <{{AUTHOR_EMAIL}}>
+# Copyright (c) 2026 hyperpolymath (metadatastician) <hyperpolymath@example.com>
 #
 # ENSAID_CONFIG.a2ml — eNSAID Environment Configuration
 # Per-repo configuration for PanLL and eNSAID-compatible tools.
@@ -89,7 +89,7 @@ version = "1.0.0"
 
 # Example: a custom portfolio for this project
 # [[portfolios.custom]]
-# id = "{{project}}-dev"
+# id = "_pathroot-dev"
 # name = "_pathroot Development"
 # description = "Panels for _pathroot development"
 # panels = ["valence-shell", "editor-bridge", "build-dashboard"]

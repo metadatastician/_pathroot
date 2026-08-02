@@ -20,7 +20,7 @@ init archetype="":
     echo ""
 
     # --- Archetype overlay data (ADR-0003) ---
-    ARCHETYPE='{{archetype}}'
+    ARCHETYPE='default'
     ARCH_FILE=""
     ARCH_PRESET=""
     if [ -n "$ARCHETYPE" ]; then
