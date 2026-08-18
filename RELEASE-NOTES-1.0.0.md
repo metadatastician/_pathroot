@@ -24,14 +24,14 @@ _pathroot is the substrate layer for Operations Management (OPSM), providing:
 
 ## 🚀 Key Features
 
-### nicaug Engine (ReScript)
+### nicaug Engine ()
 Complete platform detection and command generation:
 ```bash
 # Detect platform
-deno run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
+ run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
 
 # Validate Mustfile
-deno run --allow-read --allow-env src/nicaug/NicaugCLI.mjs validate
+ run --allow-read --allow-env src/nicaug/NicaugCLI.mjs validate
 ```
 
 **Platforms Supported:**
@@ -76,9 +76,9 @@ All shells tested and working with automatic detection.
 ## 📦 Installation
 
 ### Prerequisites
-- Deno ≥1.40
+-  ≥1.40
 - Rust ≥1.75 (for building mustorch)
-- ReScript compiler (for development)
+-  compiler (for development)
 
 ### Quick Start
 ```bash
@@ -86,11 +86,11 @@ All shells tested and working with automatic detection.
 git clone https://github.com/hyperpolymath/_pathroot.git
 cd _pathroot
 
-# Build ReScript modules
-deno task build
+# Build  modules
+ task build
 
 # Test nicaug
-deno run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
+ run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
 
 # Build mustorch (optional)
 cd rust/mustfile-orchestrator
@@ -121,7 +121,7 @@ cargo build --release
 ```
 
 ### Metrics
-- **ReScript:** ~1,300 lines (10 modules)
+- **:** ~1,300 lines (10 modules)
 - **Rust:** 825 lines (mustorch)
 - **Shell Scripts:** 22 complete implementations
 - **Runtime Shims:** 7 modules (zero dependencies)
@@ -129,9 +129,9 @@ cargo build --release
 - **Test Coverage:** Validated across 2 shells (bash, sh)
 
 ### Languages
-- ReScript (core + nicaug)
+-  (core + nicaug)
 - Rust (mustorch)
-- Deno/JavaScript (runtime)
+- /JavaScript (runtime)
 - Shell scripts (22 variants)
 
 ---
@@ -159,7 +159,7 @@ _pathroot (Path and environment layout)
 
 ### Example 1: Platform Detection
 ```bash
-deno run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
+ run --allow-read --allow-env src/nicaug/NicaugCLI.mjs info
 
 # Output:
 # Platform Detection:
@@ -231,8 +231,8 @@ mustorch validate sample-mustfile.toml
 ## 🙏 Acknowledgments
 
 Built with:
-- ReScript compiler
-- Deno runtime
+-  compiler
+-  runtime
 - Rust toolchain
 - must binary (Ada 2022)
 

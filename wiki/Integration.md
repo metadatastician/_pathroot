@@ -126,8 +126,8 @@ Create a nano-aider configuration that uses _pathroot:
 
 nano-aider can auto-discover the _pathroot environment:
 
-```typescript
-// Deno-based discovery
+```
+// -based discovery
 async function discoverPathroot(): Promise<string | null> {
   const pathrootPaths = [
     "C:\\_pathroot",           // Windows
@@ -137,7 +137,7 @@ async function discoverPathroot(): Promise<string | null> {
 
   for (const path of pathrootPaths) {
     try {
-      const content = await Deno.readTextFile(path);
+      const content = await .readTextFile(path);
       return content.trim();
     } catch {
       continue;

@@ -14,7 +14,7 @@
 - [x] `_envbase` JSON metadata format
 - [x] 22-shell compatibility matrix
 - [x] Cross-platform discovery (Windows, Linux, macOS, WSL, Android, Minix)
-- [x] ReScript/Deno implementation (624 lines)
+- [x] / implementation (624 lines)
 - [x] Rust mustorch orchestrator (825 lines)
 - [x] Ada TUI with GNAT 15.2.1 compatibility
 - [x] POSIX symlink bindings for modern GNAT
@@ -80,7 +80,7 @@
 - [ ] Chocolatey package
 
 ### API Stability
-- [ ] Stable ReScript API (1.0)
+- [ ] Stable  API (1.0)
 - [ ] Stable Ada TUI protocol
 - [ ] JSON schema versioning
 - [ ] Migration guides
@@ -142,12 +142,12 @@
 - Documented 22-shell matrix
 - Created reference implementation
 
-### Phase 2: TypeScript → ReScript Migration (Q1 2026)
+### Phase 2:  →  Migration (Q1 2026)
 **Status:** ✅ Complete
 
-- Converted all TypeScript to ReScript (519 lines)
+- Converted all  to  (519 lines)
 - Implemented nicaug engine (624 lines)
-- Created Deno runtime shims
+- Created  runtime shims
 - Zero runtime type errors
 
 ### Phase 3: Ada TUI Modernization (Q1 2026)
@@ -187,7 +187,7 @@ Feature requests: [GitHub Issues](https://github.com/hyperpolymath/_pathroot/iss
 |---------|------|-----------|
 | 1.0.0 | 2026-02-05 | Initial release with full platform support |
 | 1.0.0-rc1 | 2025-12-27 | Release candidate |
-| 0.9.0 | 2025-12-15 | Beta with ReScript implementation |
+| 0.9.0 | 2025-12-15 | Beta with  implementation |
 
 ---
 

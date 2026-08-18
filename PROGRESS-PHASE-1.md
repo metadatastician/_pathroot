@@ -5,9 +5,9 @@
 
 ## Completed ✅
 
-### 1. TypeScript → ReScript Conversion (COMPLETE)
-- ✅ All 5 source files converted (519 TS → 681 ReScript lines)
-- ✅ ReScript compilation working
+### 1.  →  Conversion (COMPLETE)
+- ✅ All 5 source files converted (519 TS → 681  lines)
+- ✅  compilation working
 - ✅ RSR compliance achieved (17/17 workflows)
 - **Commit:** e81d5b8
 
@@ -50,11 +50,11 @@
 **Priority:** Medium (TUI secondary to core)
 
 ### nicaug Runtime Integration (RESOLVED ✅)
-**Solution:** Created minimal ReScript runtime shims for Deno
+**Solution:** Created minimal  runtime shims for 
 
 **Implementation:**
 - Built custom Belt/Js module shims in `src/runtime-shims/`
-- Updated deno.json import map to route to local shims
+- Updated .json import map to route to local shims
 - Verified all commands working (help, info, validate)
 
 **Status:** COMPLETE - nicaug CLI fully functional!
@@ -98,7 +98,7 @@ Current State:
 
 ┌─────────────────────────────────────────┐
 │ _pathroot MVP (100% Complete)          │
-│ ✅ Path discovery (ReScript)            │
+│ ✅ Path discovery ()            │
 │ ✅ Environment metadata                 │
 │ ✅ Validation CLI                       │
 │ ✅ Cross-platform detection             │
@@ -110,7 +110,7 @@ Current State:
 │ ✅ Parser (NickelParser)                │
 │ ✅ Orchestrator (PlatformOrchestrator)  │
 │ ✅ CLI (NicaugCLI)                      │
-│ ✅ Runtime integration (Deno shims)    │
+│ ✅ Runtime integration ( shims)    │
 │ ✅ All commands functional              │
 └─────────────────────────────────────────┘
 
@@ -152,8 +152,8 @@ Current State:
 - `ada/tui/pathroot_tui.gpr` (fixed source dirs)
 
 ### Configuration
-- `deno.json` (updated for ReScript runtime)
-- `src/DenoBindings.res` (fixed for Deno global)
+- `.json` (updated for  runtime)
+- `src/DenoBindings.res` (fixed for  global)
 
 ## Next Immediate Actions
 
@@ -166,8 +166,8 @@ Current State:
 
 | Metric | Count |
 |--------|-------|
-| ReScript modules | 10 (6 core + 4 nicaug) |
-| Lines of ReScript | ~1300 |
+|  modules | 10 (6 core + 4 nicaug) |
+| Lines of  | ~1300 |
 | Workflows (RSR) | 17/17 ✅ |
 | Platforms targeted | 6 (Fedora, Debian, Android, macOS, Windows, Minix) |
 | Shell compatibility | 2/22 (POSIX, bash) |

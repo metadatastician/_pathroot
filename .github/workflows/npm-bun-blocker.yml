@@ -14,7 +14,7 @@ jobs:
       - name: Block npm/bun
         run: |
           if [ -f "package-lock.json" ] || [ -f "bun.lockb" ] || [ -f ".npmrc" ]; then
-            echo "❌ npm/bun artifacts detected. Use Deno instead."
+            echo "❌ npm/bun artifacts detected. Use  instead."
             exit 1
           fi
           echo "✅ No npm/bun violations"

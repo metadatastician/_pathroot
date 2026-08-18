@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 #### Core Engine
-- **nicaug Engine** - Complete Nickel-Augmented configuration engine in ReScript (624 lines)
+- **nicaug Engine** - Complete Nickel-Augmented configuration engine in  (624 lines)
   - Platform detection (6 target types: EdgeASIC, KinoiteLayered, AppleDarwin, StandardPC, etc.)
   - Multi-platform command generation (Fedora, Debian, Android, macOS, Windows, Minix)
   - Nickel/JSON parser with validation
@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Test suites (bash & Julia)
 
 #### Runtime & Integration
-- **ReScript Runtime Shims** - Deno-compatible runtime (7 modules)
+- ** Runtime Shims** - -compatible runtime (7 modules)
   - Belt_Array, Belt_Option, Js_array, Js_dict, Js_json
   - Primitive_exceptions, Stdlib_Exn
   - Zero external dependencies
@@ -47,30 +47,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Relationship: `Mustfile:must :: Justfile:just`
 
 ### Changed
-- Converted all TypeScript to ReScript (519 → 681 lines)
-- Updated build system for ReScript compilation
-- Modernized Deno configuration with proper import maps
+- Converted all  to  (519 → 681 lines)
+- Updated build system for  compilation
+- Modernized  configuration with proper import maps
 
 ### Technical Details
 
 **Languages & Tools:**
-- ReScript: Core _pathroot logic + nicaug engine
+- : Core _pathroot logic + nicaug engine
 - Rust: mustorch orchestrator
-- Deno: Runtime environment
+- : Runtime environment
 - Ada: Ada TUI (partial, GNAT issues)
 
 **Architecture:**
 ```
 ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
 │   nicaug     │─────▶│   mustorch   │─────▶│     must     │
-│  (ReScript)  │      │    (Rust)    │      │    (Ada)     │
+│  ()  │      │    (Rust)    │      │    (Ada)     │
 └──────────────┘      └──────────────┘      └──────────────┘
 Platform detection    Orchestration         Deployment exec
 ```
 
 **Metrics:**
-- ReScript modules: 10 (6 core + 4 nicaug)
-- Lines of ReScript: ~1,300
+-  modules: 10 (6 core + 4 nicaug)
+- Lines of : ~1,300
 - Rust crate: mustfile_orchestrator (825 lines)
 - Shell scripts: 22 complete implementations
 - Workflows: 17/17 RSR compliant

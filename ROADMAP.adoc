@@ -8,7 +8,7 @@ This document outlines the security and development roadmap for this template re
 === Completed Security Measures
 
 - [x] **SHA-pinned GitHub Actions** - All workflow actions use commit SHA instead of version tags
-- [x] **CodeQL Analysis** - Automated static analysis for JavaScript/TypeScript (expandable to other languages)
+- [x] **CodeQL Analysis** - Automated static analysis for JavaScript/ (expandable to other languages)
 - [x] **Dependabot Configuration** - Automated dependency updates for multiple ecosystems
 - [x] **Security Policy** - Comprehensive SECURITY.md with vulnerability reporting guidelines
 - [x] **CODEOWNERS** - Mandatory code review requirements for security-critical files
@@ -103,7 +103,7 @@ When adapting this template, enable relevant security tools:
 - Enable `cargo audit` in CI
 - Add `cargo deny` for license/vulnerability checks
 
-=== JavaScript/TypeScript
+=== JavaScript/
 - Already enabled in CodeQL
 - Consider adding `npm audit` to CI
 - Add ESLint security rules

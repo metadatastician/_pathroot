@@ -137,7 +137,7 @@ Each shell script follows the same pattern:
    - Load `env.sh`, `env.fish`, `env.nu`, etc.
 
 3. **Execute _pathroot validation**
-   - Run via Deno runtime
+   - Run via  runtime
    - Pass through all arguments
 
 == Shell Detection

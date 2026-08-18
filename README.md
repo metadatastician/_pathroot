@@ -41,21 +41,21 @@ powershell -File scripts\windows\envbase.ps1
 eval $(./scripts/posix/pathroot.sh env)
 ```
 
-### Deno + ReScript (Cross-platform)
+###  +  (Cross-platform)
 
 ```bash
-# Build ReScript modules
-deno task build
+# Build  modules
+ task build
 
 # Validate installation
-deno task validate
+ task validate
 
 # Use as library
-deno add @pathroot/tools
+ add @pathroot/tools
 ```
 
-```rescript
-// ReScript usage
+```
+//  usage
 let result = await Discovery.discover()
 if result.found {
   switch result.devtoolsRoot {
@@ -99,7 +99,7 @@ C:\_pathroot    # Global root marker
 | `scripts/windows/` | Windows batch and PowerShell scripts |
 | `scripts/posix/` | Bash scripts for Linux/macOS/WSL |
 | `ada/tui/` | Ada-based Terminal User Interface |
-| `src/` | ReScript library (compiles to JS for Deno runtime) |
+| `src/` |  library (compiles to JS for  runtime) |
 
 ## Integration
 

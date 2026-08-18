@@ -316,7 +316,7 @@ PATHROOT:AUDIT:links
 |`envbase.ps1` (Windows) or `pathroot.sh info` (POSIX)
 
 |Validate setup
-|`deno run --allow-read --allow-env src/validate.ts`
+|` run --allow-read --allow-env src/validate.ts`
 
 |Switch profile
 |`pathroot.sh profile test`

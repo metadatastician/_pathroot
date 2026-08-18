@@ -7,7 +7,7 @@ version = "0.1.0"
 description = "Demonstration of Mustfile orchestration"
 
 [requirements]
-must_have = ["deno.json", "rescript.json"]
+must_have = ["deno.json", ".json"]
 
 [tasks.validate]
 description = "Validate _pathroot structure"
@@ -15,15 +15,15 @@ run = [
     "deno run --allow-read --allow-env src/Validate.mjs"
 ]
 
-[tasks.build-rescript]
-description = "Build ReScript modules"
+[tasks.build-]
+description = "Build  modules"
 run = [
-    "rescript build"
+    " build"
 ]
 
 [tasks.test]
 description = "Run validation tests"
-depends_on = ["build-rescript"]
+depends_on = ["build-"]
 run = [
     "deno test --allow-read --allow-write --allow-env"
 ]
