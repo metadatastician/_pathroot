@@ -1,0 +1,60 @@
+// SPDX-License-Identifier: CC-BY-SA-4.0
+// Copyright (c) 2026 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+= ADR-0004: Import the original `_pathroot` lineage from AmbientOps
+:status: accepted
+:date: 2026-08-18
+
+== Context
+
+`_pathroot` originated as the `_pathroot/` component of
+`hyperpolymath/ambientops`. The top-level `metadatastician/_pathroot`
+repository was subsequently created from the Rhodium repository template, but
+the original implementation and its component history were not imported.
+Leaving both locations active risked confusing the canonical project with an
+older, substantially more complete implementation.
+
+Before removing the AmbientOps component, the migration audited the component
+across all local AmbientOps refs and the working tree. The audit found 205
+tracked files in the committed component. Only 25 path names overlapped the
+then-current canonical repository. The AmbientOps working tree also contained
+33 component-local changes, including deliberate removals of the ReScript
+implementation.
+
+== Decision
+
+Preserve the component with a history-filtered lineage whose repository root is
+the former `_pathroot/` directory. Add one commit reproducing the component's
+current working-tree state, then merge that lineage into this repository with
+unrelated histories explicitly allowed.
+
+For add/add collisions, retain the canonical repository's current version. For
+non-conflicting paths, import the AmbientOps version at repository top level.
+Files absent from the current AmbientOps working state remain absent from the
+migrated tip but recoverable from the imported history.
+
+The preservation lineage is published as
+`migration/pathroot-source-20260818`. The canonical integration is performed on
+`agent/migrate-ambientops-pathroot` before removal of the AmbientOps component.
+
+== Consequences
+
+* The original implementation and its evolution are recoverable in the
+  canonical Git object graph.
+* The current canonical metadata and CI configuration remain authoritative
+  where path names collided.
+* The cross-shell scripts, Ada libraries and TUI, Zig FFI, Idris ABI material,
+  Rust orchestrator, guides, and wiki are restored to the top-level project.
+* The obsolete AmbientOps component can be removed without destroying its
+  committed history or its previously uncommitted working state.
+* Future development must occur in `metadatastician/_pathroot`; AmbientOps must
+  not reintroduce an `_pathroot/` source subtree.
+
+== Verification
+
+The migration is accepted only after confirming that:
+
+. the preservation branch descends from the filtered component lineage;
+. the preservation tip matches the pre-removal AmbientOps working state for all
+  tracked files;
+. the canonical merge has no unresolved paths; and
+. the AmbientOps removal contains only `_pathroot/` paths.
