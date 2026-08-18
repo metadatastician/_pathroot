@@ -37,10 +37,14 @@ install_tool() {
             curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to "$BIN_DIR"
             ;;
         "must")
-            curl -L "https://github.com/hyperpolymath/must-spec/releases/latest/download/must" -o "$BIN_DIR/must"
+            curl --proto '=https' --proto-redir '=https' --tlsv1.2 -fL \
+                "https://github.com/hyperpolymath/must-spec/releases/latest/download/must" \
+                -o "$BIN_DIR/must"
             ;;
         "nicaug")
-            curl -L "https://github.com/hyperpolymath/nickel-augmented/releases/latest/download/nicaug" -o "$BIN_DIR/nicaug"
+            curl --proto '=https' --proto-redir '=https' --tlsv1.2 -fL \
+                "https://github.com/hyperpolymath/nickel-augmented/releases/latest/download/nicaug" \
+                -o "$BIN_DIR/nicaug"
             ;;
     esac
     chmod +x "$BIN_DIR/$tool"
