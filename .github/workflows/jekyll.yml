@@ -1,5 +1,5 @@
-# This workflow is managed by gh actions-lock.
 # SPDX-License-Identifier: MPL-2.0
+# This workflow is managed by gh actions-lock.
 name: Jekyll Build & Test
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: ruby/setup-ruby@f8cf14e635c2ba2c0f287d9b0c5f442c52c91bee # v1.210.0
+      - uses: ruby/setup-ruby@v1.321.0
         with:
           ruby-version: '3.2'
           bundler-cache: true
