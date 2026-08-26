@@ -20,10 +20,12 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/estate-rules.yml':
         - 'actions/checkout@v7.0.1'
+    '.github/workflows/governance.yml': []
     '.github/workflows/guix-nix-policy.yml':
         - 'actions/checkout@v6.0.1'
     '.github/workflows/guix-policy.yml':
         - 'actions/checkout@v7.0.1'
+    '.github/workflows/hypatia-scan.yml': []
     '.github/workflows/instant-sync.yml':
         - 'peter-evans/repository-dispatch@v3.0.0'
     '.github/workflows/jekyll-gh-pages.yml':
@@ -34,6 +36,7 @@ workflows:
         - 'actions/upload-pages-artifact@v4.0.0'
     '.github/workflows/jekyll.yml':
         - 'actions/checkout@v6.0.1'
+    '.github/workflows/mirror.yml': []
     '.github/workflows/npm-bun-blocker.yml':
         - 'actions/checkout@v6.0.1'
     '.github/workflows/openssf-compliance.yml':
@@ -57,10 +60,13 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/runtime-policy.yml':
         - 'actions/checkout@v7.0.1'
+    '.github/workflows/rust-ci.yml': []
     '.github/workflows/scorecard-enforcer.yml':
         - 'actions/checkout@v4.1.1'
         - 'github/codeql-action@main'
         - 'ossf/scorecard-action@v2.4.0'
+    '.github/workflows/scorecard.yml': []
+    '.github/workflows/secret-scanner.yml': []
     '.github/workflows/security-policy.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/sonarqube.yml':
