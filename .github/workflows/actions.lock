@@ -20,12 +20,14 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/estate-rules.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/governance.yml': []
+    '.github/workflows/governance.yml':
+        - 'hyperpolymath/standards@81dbf2dd854b1444fd6236fa2352474383b2c2b9'
     '.github/workflows/guix-nix-policy.yml':
         - 'actions/checkout@v6.0.1'
     '.github/workflows/guix-policy.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/hypatia-scan.yml': []
+    '.github/workflows/hypatia-scan.yml':
+        - 'hyperpolymath/standards@81dbf2dd854b1444fd6236fa2352474383b2c2b9'
     '.github/workflows/instant-sync.yml':
         - 'peter-evans/repository-dispatch@v3.0.0'
     '.github/workflows/jekyll-gh-pages.yml':
@@ -36,7 +38,8 @@ workflows:
         - 'actions/upload-pages-artifact@v4.0.0'
     '.github/workflows/jekyll.yml':
         - 'actions/checkout@v6.0.1'
-    '.github/workflows/mirror.yml': []
+    '.github/workflows/mirror.yml':
+        - 'hyperpolymath/standards@d135b05bfc647d0c0fbfedc7e80f37ea50f49236'
     '.github/workflows/npm-bun-blocker.yml':
         - 'actions/checkout@v6.0.1'
     '.github/workflows/openssf-compliance.yml':
@@ -60,13 +63,16 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/runtime-policy.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/rust-ci.yml': []
+    '.github/workflows/rust-ci.yml':
+        - 'hyperpolymath/standards@412a7031577112b31ee287cc6060179d638d6500'
     '.github/workflows/scorecard-enforcer.yml':
         - 'actions/checkout@v4.1.1'
         - 'github/codeql-action@main'
         - 'ossf/scorecard-action@v2.4.0'
-    '.github/workflows/scorecard.yml': []
-    '.github/workflows/secret-scanner.yml': []
+    '.github/workflows/scorecard.yml':
+        - 'hyperpolymath/standards@81dbf2dd854b1444fd6236fa2352474383b2c2b9'
+    '.github/workflows/secret-scanner.yml':
+        - 'hyperpolymath/standards@c65436ee3351cd6b0fa14b142938b195efc77586'
     '.github/workflows/security-policy.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/sonarqube.yml':
