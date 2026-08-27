@@ -37,6 +37,8 @@ workflows:
     '.github/workflows/jekyll.yml':
         - 'actions/checkout@v7.0.1'
         - 'ruby/setup-ruby@v1.321.0'
+    '.github/workflows/label-triage.yml': []
+    '.github/workflows/labels.yml': []
     '.github/workflows/mirror.yml': []
     '.github/workflows/npm-bun-blocker.yml':
         - 'actions/checkout@v7.0.1'
