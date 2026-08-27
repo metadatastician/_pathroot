@@ -15,7 +15,7 @@
 | **Bash/POSIX Shell** | Scripts, automation | Keep minimal |
 | **JavaScript** | Only where  cannot | MCP protocol glue, Deno APIs |
 | **Nickel** | Configuration language | For complex configs |
-| **Guile Scheme** | State/meta files | STATE.scm, META.scm, ECOSYSTEM.scm |
+| **Guile Scheme** | State/meta files | .machine_readable/descriptiles/STATE.a2ml, .machine_readable/descriptiles/META.a2ml, .machine_readable/descriptiles/ECOSYSTEM.a2ml |
 | **Julia** | Batch scripts, data processing | Per RSR |
 | **OCaml** | AffineScript compiler | Language-specific |
 | **Ada** | Safety-critical systems | Where required |
