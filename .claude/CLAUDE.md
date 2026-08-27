@@ -25,7 +25,8 @@
 | Banned | Replacement |
 |--------|-------------|
 | Deno | Bun |
-| Node.js | Bun |
+ Deno | Bun |
+ Node.js | Bun |
 | npm | Bun |
 | pnpm/yarn | Bun |
 | Go | Rust |
