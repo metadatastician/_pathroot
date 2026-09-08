@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MPL-2.0
+// Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
 // _PATHROOT FFI Implementation
 //
 // This module implements the C-compatible FFI declared in src/abi/Foreign.idr

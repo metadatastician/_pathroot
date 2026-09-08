@@ -2,38 +2,33 @@
 # This workflow is managed by gh actions-lock.
 # Prevention workflow - runs OpenSSF Scorecard and fails on low scores
 name: OpenSSF Scorecard Enforcer
-
 on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 6 * * 1'  # Weekly on Monday
+    - cron: '0 6 * * 1' # Weekly on Monday
   workflow_dispatch:
-
 jobs:
   scorecard:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       security-events: write
-      id-token: write  # For OIDC
+      id-token: write # For OIDC
     steps:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-
       - name: Run Scorecard
         uses: ossf/scorecard-action@v2.4.4
         with:
           results_file: results.sarif
           results_format: sarif
           publish_results: true
-
       - name: Upload SARIF
         uses: github/codeql-action/upload-sarif@main
         with:
           sarif_file: results.sarif
-
       - name: Check minimum score
         run: |
           # Parse score from results
@@ -48,7 +43,7 @@ jobs:
             echo "::error::Scorecard score $SCORE is below minimum $MIN_SCORE"
             exit 1
           fi
-
+    timeout-minutes: 15
   # Check specific high-priority items
   check-critical:
     runs-on: ubuntu-latest
@@ -56,14 +51,12 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7.0.1
-
       - name: Check SECURITY.md exists
         run: |
           if [ ! -f "SECURITY.md" ]; then
             echo "::error::SECURITY.md is required"
             exit 1
           fi
-
       - name: Check for pinned dependencies
         run: |
           # Check workflows for unpinned actions
@@ -72,3 +65,6 @@ jobs:
             echo "::warning::Found unpinned actions:"
             echo "$unpinned"
           fi
+    timeout-minutes: 15
+permissions:
+  contents: read

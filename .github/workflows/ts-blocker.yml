@@ -4,13 +4,11 @@ on:
   push:
     branches: [main]
   pull_request:
-
 # Estate guardrail: scope push to default branches (PR fires once, not
 # push+PR) and cancel superseded runs. Safe — read-only PR check.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -24,9 +22,12 @@ jobs:
           NEW_JS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | grep -E '\.(js|jsx)$' | grep -v '\.res\.js$' | grep -v '\.gen\.' | grep -v 'node_modules' || true)
 
           if [ -n "$NEW_TS" ] || [ -n "$NEW_JS" ]; then
-            echo "❌ New TS/JS files detected. Use  instead."
+            echo "❌ New TS/JS files detected. Use AffineScript instead."
             [ -n "$NEW_TS" ] && echo "$NEW_TS"
             [ -n "$NEW_JS" ] && echo "$NEW_JS"
             exit 1
           fi
           echo "✅  policy enforced"
+    timeout-minutes: 10
+permissions:
+  contents: read

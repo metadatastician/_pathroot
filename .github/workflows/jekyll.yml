@@ -5,7 +5,6 @@ on:
   push:
     branches: [main]
   pull_request:
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,3 +23,6 @@ jobs:
           else
             echo "No Gemfile found, skipping Jekyll build"
           fi
+    timeout-minutes: 15
+permissions:
+  contents: read
