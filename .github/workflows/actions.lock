@@ -63,7 +63,6 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/runtime-policy.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/rust-ci.yml': []
     '.github/workflows/scorecard-enforcer.yml':
         - 'actions/checkout@v7.0.1'
         - 'github/codeql-action@main'
