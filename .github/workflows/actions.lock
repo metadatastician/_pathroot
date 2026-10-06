@@ -6,8 +6,8 @@ workflows:
     '.github/workflows/boj-build.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/codeql.yml':
-        - 'actions/checkout@v7.0.1'
-        - 'github/codeql-action@v4.38.2'
+        - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
+        - 'github/codeql-action@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2'
     '.github/workflows/container-build.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/dependabot-automerge.yml':
@@ -19,12 +19,14 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/estate-rules.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/governance.yml': []
+    '.github/workflows/governance.yml':
+        - 'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
     '.github/workflows/guix-nix-policy.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/guix-policy.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/hypatia-scan.yml': []
+    '.github/workflows/hypatia-scan.yml':
+        - 'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
     '.github/workflows/instant-sync.yml':
         - 'peter-evans/repository-dispatch@v4.0.1'
     '.github/workflows/jekyll-gh-pages.yml':
@@ -38,7 +40,8 @@ workflows:
         - 'ruby/setup-ruby@v1.326.0'
     '.github/workflows/label-triage.yml': []
     '.github/workflows/labels.yml': []
-    '.github/workflows/mirror.yml': []
+    '.github/workflows/mirror.yml':
+        - 'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
     '.github/workflows/npm-bun-blocker.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/openssf-compliance.yml':
@@ -62,8 +65,10 @@ workflows:
         - 'actions/checkout@v7.0.1'
     '.github/workflows/runtime-policy.yml':
         - 'actions/checkout@v7.0.1'
-    '.github/workflows/scorecard.yml': []
-    '.github/workflows/secret-scanner.yml': []
+    '.github/workflows/scorecard.yml':
+        - 'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
+    '.github/workflows/secret-scanner.yml':
+        - 'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
     '.github/workflows/security-policy.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/sonarqube.yml':
@@ -99,6 +104,11 @@ dependencies:
         commit: 'sha1-55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
         owner_id: 44036562
         repo_id: 215566462
+    'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1':
+        ref: '3d3c42e5aac5ba805825da76410c181273ba90b1'
+        commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
+        owner_id: 44036562
+        repo_id: 197814629
     'actions/checkout@v7.0.1':
         ref: 'v7.0.1'
         commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
@@ -156,7 +166,7 @@ dependencies:
         commit: 'sha1-54075bcc5e249e4758d363f27d099f55d843f124'
         owner_id: 47606891
         repo_id: 331103973
-    'github/codeql-action@v4.38.2':
+    'github/codeql-action@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2':
         ref: 'v4.38.2'
         commit: 'sha1-2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2'
         owner_id: 9919
@@ -171,6 +181,11 @@ dependencies:
         commit: 'sha1-89f3c2702f4f650a92aa7411502f38da06abd562'
         owner_id: 6759885
         repo_id: 1275650185
+    'hyperpolymath/standards@11ba299dca221b6d4e970eeb58dd17ccbb825a9a':
+        ref: '11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
+        commit: 'sha1-11ba299dca221b6d4e970eeb58dd17ccbb825a9a'
+        owner_id: 6759885
+        repo_id: 1116521501
     'oven-sh/setup-bun@v2.2.0':
         ref: 'v2.2.0'
         commit: 'sha1-0c5077e51419868618aeaa5fe8019c62421857d6'
