@@ -1,95 +1,293 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
-// SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
-= AFFIRMATION — _pathroot, as of <UTC timestamp>
-:toc: macro
-:toclevels: 2
+= AFFIRMATION — _pathroot, as of 2026-10-07
+Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+:status: DRAFT — agent-authored, NOT affirmed by the owner
+:toc:
+:icons: font
 
-_the No-Bullshit file: what we affirm was true and checkable at this moment._
-
-[NOTE]
+[WARNING]
 ====
-*This file is a template.* Replace the `{{…}}` placeholders and the `<…>` anchor
-fields, then re-run your project's own checks in the same session before signing.
-
-An *affirmation* is a solemn declaration of the truth of a statement, made by
-someone who _declines to swear an oath_ — our truth-as-best-believed at a stamped
-instant, binding on our honesty, not a claim of infallibility. It is the third of
-the README / EXPLAINME / AFFIRMATION trio:
-
-[cols="1,3,2",options="header"]
-|===
-| File | Answers | Tense
-| `README.adoc` | _Where is this going, and why?_ — steering, intent, vision | future / aspirational
-| `EXPLAINME.adoc` | _How is it built, and what's the evidence?_ — engineering | descriptive / mechanism
-| *`AFFIRMATION.adoc`* (this file) | _What can we honestly affirm was *true and checkable* at a stamped moment?_ | a frozen instant, falsifiable
-|===
+*DRAFT.* An AI engineering party drafted this file. It is not an affirmation
+until the owner lands it with a signed commit (`git commit -S`) whose parent
+is the anchor SHA below. If the landing commit has any other parent, read
+this file as a draft.
 ====
-
-toc::[]
 
 == What this is, and how it works
 
-*What it is.* A short, dated, signed snapshot of what metadatastician can honestly and
-verifiably claim about *_pathroot* at one exact commit. Nothing here is
-marketing and nothing is a promise about the future — those live in the README.
-This file is the receipt.
+`_pathroot` describes itself as a global marker-file protocol for modular
+devtools environments. The tree holds:
 
-*How it stays trustworthy.* Three moving parts:
+* a Rust "Mustfile orchestrator" crate (`rust/mustfile-orchestrator`);
+* a Zig FFI library (`ffi/zig`);
+* Idris2 ABI sources (`src/abi`);
+* three Ada libraries and an Ada TUI (`libs/ada-*`, `ada/tui`);
+* a gated proof sweep (`verification/proofs`);
+* RSR template validators (`scripts/`, `tests/`).
 
-. *Ground truth, not memory.* Every claim below must be produced by _running the
-  project's own checks_ in the session that writes this file (build, tests,
-  typecheck, `just audit`). Where a status doc, the `Justfile`, or memory says
-  otherwise, the live run wins and the contradiction is flagged here.
-. *A frozen anchor.* The file names the exact commit SHA, branch, UTC timestamp,
-  and toolchain (see <<verifiable-anchor>>), so "true" always means "true _at
-  this point_". Move the SHA and this file is a draft until it is re-run.
-. *A real signature.* It is landed by a *signed git commit*; that signature over
-  this content at the anchored SHA is what makes the affirmation tamper-evident
-  and attributable — not the prose alone.
+This file reports what those components' own build and check commands
+produced at one commit. It is a receipt of runs, not a design document.
 
-*We are fallible.* This is our best honest belief, not a proof of its own
-correctness. Treat it as a falsifiable claim, not gospel.
+== The epistemic contract
 
-== The epistemic contract (read this before you trust _or_ attack)
-
-This document records metadatastician's *best belief* at the timestamp below. It is
-*not a guarantee of correctness.* The only guarantee is *no intentional
-overclaim*: where something is proven we say "proven"; where it is a documented
-trust boundary, an experiment, or an unwired module, we say so; where a claim is
-the README's aspiration rather than a checked result, we say so. An honest claim
-that later turns out false is an *error to be fixed* — not a lie.
-
-*Standing invitation to refute.* You are invited to bulldoze any claim in this
-file. Bring a counter-example, a failing run, or a contradicting source.
-
-== What we affirm (fill in — delete the examples)
-
-[cols="2,1,3",options="header"]
-|===
-| Claim | Status | Evidence (command / `file:line`)
-| _e.g. The library builds clean_ | affirmed | `just build` at the anchor SHA
-| _e.g. The ABI seam typechecks_ | affirmed | `idris2 --typecheck abi.ipkg`
-| _e.g. Feature X is complete_ | aspiration | README §… (not yet checked)
-|===
-
-== What we do NOT claim
-
-* List the known gaps, trust boundaries, postulates, unwired modules, and stale
-  docs here. Silence is not affirmation — name what you have *not* verified.
+You may conclude that each command below produced the stated exit code and
+counts at the anchor commit, on the stated toolchain. You may not conclude
+anything about code no command exercised. Nothing here says the marker-file
+protocol works end to end. At this commit no test of it compiles and runs
+(see <<outstanding>>). Where a run and a status document disagree, the run
+wins.
 
 [#verifiable-anchor]
 == Verifiable anchor
 
-[cols="1,3"]
+[cols="1,3", options="header"]
 |===
-| Project | _pathroot
-| Repository | https://github.com/metadatastician/_pathroot
-| Commit (SHA) | <full commit SHA at time of signing>
-| Branch | {{MAIN_BRANCH}}
-| Timestamp (UTC) | <ISO-8601 UTC timestamp>
-| Toolchain | <compilers / provers / versions used to ground the claims>
-| Affirmed by | hyperpolymath <hyperpolymath@example.com>
+| Field | Value
+
+| Repo
+| `metadatastician/_pathroot`
+
+| Branch
+| `main` (worktree branch `docs/affirmation-2026-10-07`, created from
+  `origin/main`)
+
+| Commit (HEAD)
+| `46aae564da48f1263a0e8f1a6600cde23fa49b2a`
+
+| Permalink
+| https://github.com/metadatastician/_pathroot/tree/46aae564da48f1263a0e8f1a6600cde23fa49b2a
+
+| Verified (UTC)
+| Runs between `2026-10-07T11:04:54Z` and `2026-10-07T11:09:17Z`
+
+| Working-tree delta at verification
+| `clean` before the runs. `gprbuild` wrote untracked `obj/` and `lib/`
+  directories under `ada/tui` and `libs/ada-*`. They were removed after the
+  Ada runs, and `git status --porcelain` was empty again before this file
+  was written. Cargo and Zig output went to a scratch directory outside the
+  tree. The results are unaffected.
+
+| Toolchain
+| rustc 1.99.0 / cargo 1.99.0; Zig 0.16.0 and 0.14.0; GNAT 14.2.0 with
+  GPRBUILD 18.0w (Debian); Idris 2 0.7.0 (pack); Lean 4 (via elan, per
+  `verification/proofs/lean4/lean-toolchain`); Agda 2.6.4.3 with
+  standard-library 2.1 (Debian); Coq 8.20.1; just 1.56.0; GNU bash
 |===
 
-_Landed by a signed git commit. Verify with `git log --show-signature` that the
-anchor SHA above matches the commit that introduced this affirmation._
+[CAUTION]
+====
+If you are reading this at a later commit, the claims may have drifted.
+Re-run the reproduction steps and write a fresh affirmation; do not trust a
+stale one.
+====
+
+The runs used a restricted `PATH`: `/usr/bin:/bin` plus the cargo, zig,
+pack, elan and just directories under `developer/tools/opt`. That kept the
+mise shims out, because they refuse to run under this repo's untrusted
+`mise.toml`. The repo's `mise.toml` was not trusted.
+
+== Companion documents and repo metadata (cross-check)
+
+* `README.adoc`: one line of project description, then mostly unedited RSR
+  template text (`just init` instructions and so on). It makes no checkable
+  claim about the protocol.
+* `docs/affirmations/AFFIRMATION-2026-08-02.adoc` is the superseded file.
+  It was the unfilled RSR template: a `{{MAIN_BRANCH}}` placeholder, a
+  `hyperpolymath@example.com` author and italic "e.g." rows. It made *zero*
+  claims about this repo, so there was nothing to re-run or refute.
+* `verification/proofs/*/MANIFEST` holds the gated and quarantine lists that
+  `scripts/check-proofs.sh` reads. The quarantine reasons below come from
+  those files, and the runs reproduced them.
+* `Justfile`: `build`, `fmt`, `fmt-check`, `lint`, `e2e`, `aspect`, `bench`
+  and `readiness` are `echo` stubs. `test` deliberately exits 1 until it is
+  wired.
+
+== The honest state (one breath)
+
+Each passing check, with its counts:
+
+* The Rust binary target builds.
+* The proof sweep passes on its own terms: 3 gated modules compile, and
+  6 quarantined modules still fail as recorded.
+* One of the three Ada libraries builds.
+* The dangerous-construct scan and the shell-scaffold test pass.
+
+Each failing check:
+
+* The Rust library tests do not compile.
+* The Zig FFI does not build under either Zig tried.
+* None of the five `src/abi` Idris2 files typechecks.
+* Two of the three Ada libraries and the Ada TUI fail.
+* `just test` fails by design.
+* Five of the repo's own validators fail.
+
+=== What is solid (and how we checked)
+
+[cols="3,2,1", options="header"]
+|===
+| Claim | Command | Result
+
+| The Rust crate and its `mustorch` binary compile
+| `cargo build --locked` (in `rust/mustfile-orchestrator`)
+| exit 0; 0 warnings
+
+| The binary target's test harness runs
+| `cargo test --locked --bin mustorch`
+| exit 0; 0 passed, 0 failed (it has no tests)
+
+| Gated Idris2 proof compiles; 5 quarantined still fail as recorded
+| `bash scripts/check-proofs.sh idris2`
+| exit 0; 1 PASS (`ABI/Foreign.idr`), 5 quarantined
+
+| Lean4 proof file still fails as recorded (quarantined)
+| `bash scripts/check-proofs.sh lean4`
+| exit 0; 0 gated, 1 quarantined
+
+| Gated Agda proof compiles under `--safe`
+| `AGDA_DIR=<scratch> bash scripts/check-proofs.sh agda`
+| exit 0; 1 PASS (`Properties.agda`)
+
+| Gated Coq proof compiles
+| `bash scripts/check-proofs.sh coq`
+| exit 0; 1 PASS (`TypeSafety.v`)
+
+| No banned construct is *used* in proof code (comments ignored)
+| `bash scripts/scan-dangerous.sh`
+| exit 0
+
+| Ada terminal-ANSI library builds
+| `gprbuild -p -P libs/ada-terminal-ansi/terminal_ansi.gpr`
+| exit 0; 0 errors, 4 warnings
+
+| Shell-detection scaffold is present and executable
+| `bash scripts/test-shells.sh`
+| exit 0
+|===
+
+[[nuance]]
+=== The honest nuance you must not lose
+
+* "Proof sweep passes" means *gated modules compile and quarantined modules
+  still fail*. Across the four provers, 3 modules are gated and pass. 6 are
+  quarantined and fail: 5 Idris2 (`Types`, `ABI/Layout`, `ABI/Platform`,
+  `ABI/Pointers`, `ABI/Compliance`) and the only Lean file,
+  `ApiTypes.lean`. The MANIFEST records each of the 6 as never having
+  compiled.
+* The proofs under `verification/proofs` are generic RSR ABI and type
+  templates. None states a property of the marker-file protocol.
+* The Agda PASS needed a scratch `AGDA_DIR` listing Debian's
+  standard-library 2.1. On this machine `~/.agda/libraries` points at a
+  deleted job directory (`~/.claude/jobs/e5960853/tmp/agda-lib-defs/`), so
+  any Agda check run as-is fails there. That is a fault in the machine, not
+  the repo, and it was not modified.
+* The Rust build passing is not a test result. The crate's 6 `#[test]`
+  functions all live in the library, which does not compile under test.
+  See <<outstanding>>.
+
+=== Known-incomplete but honestly fenced
+
+* `just test` exits 1 with "FAIL: `just test` has not been wired". It
+  refuses to pass rather than echo success.
+* `scripts/check-proofs.sh` fails if a proof file is missing from its
+  MANIFEST, so the quarantine cannot grow silently.
+
+[[outstanding]]
+=== Outstanding / weak / refuted (no spin)
+
+* *Rust library tests do not compile.* `cargo test --locked` exits 101.
+  The error is `E0432 unresolved import crate::ProjectMetadata` at
+  `src/executor.rs:134`; rustc suggests `crate::types::ProjectMetadata`.
+  So 0 of the 6 `#[test]` functions run (types 1, executor 1, platform 2,
+  parser 2).
+* *Zig FFI does not build.*
+** Under Zig 0.16.0, `zig build test` in `ffi/zig` exits 2: `build.zig:12`
+   calls `addSharedLibrary`, which was removed from the build API.
+** `.tool-versions` names `zig 0.14.0`, but only in a comment. Under
+   0.14.0 both `zig build` and `zig build test` exit 1. The error is
+   "documentation comments cannot be attached to tests" at
+   `src/symlink.zig:61`.
+* *Idris2 ABI sources do not typecheck.* `idris2 --check` on each of the 5
+  files in `src/abi` exits 1.
+** `Symlink.idr` and `SymlinkTypes.idr` fail with "Expected end of input"
+   on a record field named `data` (a keyword).
+** `Types.idr`, `Layout.idr` and `Foreign.idr` fail with "Expected
+   namespaced name", because their module name is `_PATHROOT.ABI.*` and
+   unfilled `{{TYPES}}` template text remains.
+** No `.ipkg` covers `src/abi`.
+* *Ada: 2 of 3 libraries and the TUI fail.*
+** `path_environment.gpr`: exit 4, 3 errors (ambiguous call to `Append` at
+   `path_environment.adb:106`).
+** `symlink_manager.gpr`: exit 4, 2 errors. `Read_Symbolic_Link` and
+   `Create_Symbolic_Link` are not declared in `GNAT.OS_Lib`.
+** `ada/tui/pathroot_tui.gpr`: exit 4. Compilation succeeds, but binding
+   fails with "Pathroot_Tui cannot be used as a main program".
+** `alr` (Alire) was not on the restricted `PATH`, so the `alire.toml`
+   manifests were not exercised.
+* *Repo validators fail:*
+** `bash tests/aspect_tests.sh`: exit 1, PASS=2 FAIL=1. All 4 hits are
+   prose: 3 in `verification/proofs/README.adoc` lines 48–50 and the
+   "NO Admitted allowed" comment in `TypeSafety.v`. `scan-dangerous.sh`
+   finds none in code. The gate's own verdict is still FAIL.
+** `bash tests/e2e.sh`: exit 1, PASS=0 FAIL=1. It clones the repo as an
+   RSR template and runs `just init`, which fails with "unknown archetype
+   'default'".
+** `bash scripts/check-no-placeholders.sh`: exit 1. 35 files contain
+   unfilled `{{PLACEHOLDER}}` tokens.
+** `bash scripts/validate-template.sh`: exit 1. "Required directory
+   missing: src/interface/Abi".
+** `bash scripts/check-root-shape.sh`: exit 1. 33 root entries are not on
+   the allowlist.
+* *Not run:* the TLA+ spec `verification/proofs/tlaplus/StateMachine.tla`
+  was not model-checked. `just ci` was not run as a unit. It depends on
+  `quality`, whose `lint`/`fmt-check` steps are `echo` stubs, so a pass
+  would carry no information.
+
+== Reproduce it yourself
+
+Run these from a clean checkout of the anchor commit, with the toolchain
+above on `PATH`.
+
+[source,bash]
+----
+(cd rust/mustfile-orchestrator && cargo build --locked)   # exit 0
+(cd rust/mustfile-orchestrator && cargo test --locked)    # exit 101, E0432
+(cd ffi/zig && zig build test)          # 0.16.0: exit 2; 0.14.0: exit 1
+for f in src/abi/*.idr; do idris2 --check "$f"; done      # each exit 1
+for g in libs/ada-path-environment/path_environment.gpr \
+         libs/ada-symlink-manager/symlink_manager.gpr \
+         libs/ada-terminal-ansi/terminal_ansi.gpr \
+         ada/tui/pathroot_tui.gpr; do gprbuild -p -P "$g"; done
+                                        # exits 4, 4, 0, 4
+for p in idris2 lean4 agda coq; do bash scripts/check-proofs.sh "$p"; done
+                                        # each RESULT: PASS (Agda needs a
+                                        # valid AGDA_DIR libraries file)
+bash scripts/scan-dangerous.sh          # exit 0
+bash scripts/test-shells.sh             # exit 0
+just test                               # exit 1 by design
+bash tests/aspect_tests.sh              # exit 1: PASS=2 FAIL=1
+bash tests/e2e.sh                       # exit 1: unknown archetype
+bash scripts/check-no-placeholders.sh   # exit 1: 35 files
+bash scripts/validate-template.sh       # exit 1
+bash scripts/check-root-shape.sh        # exit 1: 33 entries
+----
+
+== One-line characterisation (quote this)
+
+A largely uninstantiated RSR scaffold. At `46aae564` its proof sweep (three
+generic gated proofs) and one Ada library check out. Its Rust tests, Zig
+FFI, Idris2 ABI and two of three Ada libraries do not build, so nothing
+tests the marker-file protocol itself.
+
+== Joint attestation
+
+Engineering party (AI)::
+  `claude-opus-5-5` ran every command named above against
+  `46aae564da48f1263a0e8f1a6600cde23fa49b2a` between 2026-10-07T11:04:54Z
+  and 2026-10-07T11:09:17Z. The wording of this file faithfully reports
+  those runs, including the failures.
+
+Owner / maintainer::
+  Jonathan D.A. Jewell affirms this file by landing it with a signed commit
+  whose parent is the anchor SHA:
+  `git commit -S -s -m "docs: affirm state at 46aae564"`. He then verifies
+  it with `git log --show-signature -1`.
