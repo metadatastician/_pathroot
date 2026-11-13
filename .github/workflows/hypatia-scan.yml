@@ -25,4 +25,4 @@ permissions:
   security-events: write
 jobs:
   scan:
-    uses: hyperpolymath/standards/.github/workflows/hypatia-scan-reusable.yml@11ba299dca221b6d4e970eeb58dd17ccbb825a9a
+    uses: metadatastician/standards/.github/workflows/hypatia-scan-reusable.yml@60382738566ffbb7d6bf364b12f4f583e12af750
